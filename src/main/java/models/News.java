@@ -7,7 +7,7 @@ public class News {
     private String header;
     private String content;
     private String written_by;
-    ArrayList<News> news = new ArrayList<>();
+    public static ArrayList<News> news = new ArrayList<>();
 
     public News(String header, String content, String written_by) {
         this.header = header;
@@ -49,7 +49,7 @@ public class News {
         this.written_by = written_by;
     }
 
-    public ArrayList<News> getNews() {
+    public static ArrayList<News> getNews() {
         return news;
     }
 
