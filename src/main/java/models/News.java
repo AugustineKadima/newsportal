@@ -8,14 +8,14 @@ public class News {
     private String header;
     private String content;
     private String written_by;
-    public static ArrayList<News> news = new ArrayList<>();
+    public static ArrayList<News> newsItems = new ArrayList<>();
 
     public News(String header, String content, String written_by) {
         this.header = header;
         this.content = content;
         this.written_by = written_by;
-        news.add(this);
-        this.id = news.size();
+        newsItems.add(this);
+        this.id = newsItems.size();
     }
 
     public int getId() {
@@ -50,12 +50,12 @@ public class News {
         this.written_by = written_by;
     }
 
-    public static ArrayList<News> getNews() {
-        return news;
+    public static ArrayList<News> getNewsItems() {
+        return newsItems;
     }
 
     public void setNews(ArrayList<News> news) {
-        this.news = news;
+        this.newsItems = news;
     }
 
     @Override
