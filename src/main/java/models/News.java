@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class News {
     private int id;
@@ -55,5 +56,18 @@ public class News {
 
     public void setNews(ArrayList<News> news) {
         this.news = news;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        News news = (News) o;
+        return id == news.id && header.equals(news.header) && content.equals(news.content) && written_by.equals(news.written_by);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, header, content, written_by);
     }
 }
