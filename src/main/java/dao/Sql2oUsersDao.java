@@ -28,7 +28,10 @@ public class Sql2oUsersDao implements IUsersDao{
 
     @Override
     public List<User> getAll() {
-        return null;
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM users")
+                    .executeAndFetch(User.class);
+        }
     }
 
     @Override
