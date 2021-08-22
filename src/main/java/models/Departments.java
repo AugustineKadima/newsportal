@@ -16,4 +16,44 @@ public class Departments{
         allDepartments.add(this);
         this.id = allDepartments.size();
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getNumber_of_employees() {
+        return number_of_employees;
+    }
+
+    public void setNumber_of_employees(int number_of_employees) {
+        this.number_of_employees = number_of_employees;
+    }
+
+    public static ArrayList<Departments> getAllDepartments() {
+        return allDepartments;
+    }
+
+    public static void setAllDepartments(ArrayList<Departments> allDepartments) {
+        Departments.allDepartments = allDepartments;
+    }
 }
