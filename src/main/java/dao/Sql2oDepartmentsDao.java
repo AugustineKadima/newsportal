@@ -49,6 +49,11 @@ public class Sql2oDepartmentsDao implements IDepartmentsDao{
 
     @Override
     public void clearAll() {
-
+        String sql = "DELETE from departments";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql).executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
     }
 }
