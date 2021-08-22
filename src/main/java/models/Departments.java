@@ -70,4 +70,8 @@ public class Departments{
     public int hashCode() {
         return Objects.hash(name, id, description, number_of_employees);
     }
+
+    public static void clearArray(){
+        allDepartments.clear();
+    }
 }

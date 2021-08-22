@@ -31,5 +31,17 @@ public class UsersTest {
         Assertions.assertEquals("Assistant Technician", users.getPosition());
         Assertions.assertEquals("Electronics", users.getAssociated_department());
         Assertions.assertEquals("Fix bugs", users.getRoles());
+
+    }
+    @Test
+    public void allUsersInstantiatesWithAnIdOf1(){
+        Users.clearArray();
+        Users users = new Users(
+                "Mercy",
+                "Manager",
+                "Manage a team of IT professionals",
+                "ICT");
+        Assertions.assertEquals(1, users.getId());
+
     }
 }

@@ -81,4 +81,8 @@ public class Users {
     public int hashCode() {
         return Objects.hash(id, name, position, roles, associated_department);
     }
+
+    public static void clearArray(){
+        allUsers.clear();
+    }
 }

@@ -70,4 +70,8 @@ public class News {
     public int hashCode() {
         return Objects.hash(id, header, content, written_by);
     }
+
+    public static void clearArray(){
+        newsItems.clear();
+    }
 }

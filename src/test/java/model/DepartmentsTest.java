@@ -29,4 +29,14 @@ public class DepartmentsTest {
         Assertions.assertEquals(3, departments.getNumber_of_employees());
     }
 
+    @Test
+    public void DepartmentsInstantiatesWithAnIdOf1(){
+        Departments.clearArray();
+        Departments departments = new Departments(
+                "ICT",
+                "Tech team",
+                12);
+        Assertions.assertEquals(1, departments.getId());
+    }
+
 }

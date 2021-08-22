@@ -30,4 +30,15 @@ public class NewsTest {
         Assertions.assertEquals("Curfew extended to June 2022", news.getContent());
         Assertions.assertEquals("Jeff Koinange", news.getWritten_by());
     }
+
+    @Test
+    public void NewsInstantiatesWithAnIdOf1(){
+        News.clearArray();
+        News news = new News(
+                "Angry man Vandalizes Property",
+                "An angry man vandalized property in Nairobi",
+                "Larry Madowo"
+        );
+        Assertions.assertEquals(1, news.getId());
+    }
 }
