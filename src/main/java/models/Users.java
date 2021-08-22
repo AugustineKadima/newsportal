@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Users {
@@ -8,13 +9,16 @@ public class Users {
     private String position;
     private String roles;
     private String associated_department;
+    public static ArrayList<Users> allUsers = new ArrayList<>();
 
-    public Users(int id, String name, String position, String roles, String associated_department) {
-        this.id = id;
+    public Users( String name, String position, String roles, String associated_department) {
         this.name = name;
         this.position = position;
         this.roles = roles;
         this.associated_department = associated_department;
+        allUsers.add(this);
+        this.id = allUsers.size();
+
     }
 
     public int getId() {
@@ -55,6 +59,14 @@ public class Users {
 
     public void setAssociated_department(String associated_department) {
         this.associated_department = associated_department;
+    }
+
+    public static ArrayList<Users> getAllUsers() {
+        return allUsers;
+    }
+
+    public static void setAllUsers(ArrayList<Users> allUsers) {
+        Users.allUsers = allUsers;
     }
 
     @Override
