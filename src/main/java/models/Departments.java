@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Departments{
     private String name;
@@ -55,5 +56,18 @@ public class Departments{
 
     public static void setAllDepartments(ArrayList<Departments> allDepartments) {
         Departments.allDepartments = allDepartments;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Departments that = (Departments) o;
+        return id == that.id && number_of_employees == that.number_of_employees && name.equals(that.name) && description.equals(that.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, id, description, number_of_employees);
     }
 }
