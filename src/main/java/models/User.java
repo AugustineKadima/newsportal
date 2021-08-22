@@ -3,17 +3,17 @@ package models;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Users {
+public class User {
     private int id;
     private String name;
-    private String position;
+    private String title;
     private String roles;
     private String associated_department;
-    public static ArrayList<Users> allUsers = new ArrayList<>();
+    public static ArrayList<User> allUsers = new ArrayList<>();
 
-    public Users( String name, String position, String roles, String associated_department) {
+    public User(String name, String position, String roles, String title) {
         this.name = name;
-        this.position = position;
+        this.title = position;
         this.roles = roles;
         this.associated_department = associated_department;
         allUsers.add(this);
@@ -37,12 +37,12 @@ public class Users {
         this.name = name;
     }
 
-    public String getPosition() {
-        return position;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getRoles() {
@@ -61,25 +61,25 @@ public class Users {
         this.associated_department = associated_department;
     }
 
-    public static ArrayList<Users> getAllUsers() {
+    public static ArrayList<User> getAllUsers() {
         return allUsers;
     }
 
-    public static void setAllUsers(ArrayList<Users> allUsers) {
-        Users.allUsers = allUsers;
+    public static void setAllUsers(ArrayList<User> allUsers) {
+        User.allUsers = allUsers;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Users users = (Users) o;
-        return id == users.id && name.equals(users.name) && position.equals(users.position) && roles.equals(users.roles) && associated_department.equals(users.associated_department);
+        User user = (User) o;
+        return id == user.id && name.equals(user.name) && title.equals(user.title) && roles.equals(user.roles) && associated_department.equals(user.associated_department);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, position, roles, associated_department);
+        return Objects.hash(id, name, title, roles, associated_department);
     }
 
     public static void clearArray(){

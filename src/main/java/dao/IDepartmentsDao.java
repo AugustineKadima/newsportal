@@ -1,15 +1,15 @@
 package dao;
 
-import models.Departments;
+import models.Department;
 
 import java.util.List;
 
 public interface IDepartmentsDao {
     //create
-    void add(Departments departments);
+    void add(Department departments);
 
     //read
-    List<Departments> getAll();
+    List<Department> getAll();
 
 
     //update

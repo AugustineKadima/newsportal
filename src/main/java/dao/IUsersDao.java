@@ -1,15 +1,15 @@
 package dao;
 
-import models.Users;
+import models.User;
 
 import java.util.List;
 
 public interface IUsersDao {
     //create
-    void add(Users users);
+    void add(User user);
 
     //read
-    List<Users> getAll();
+    List<User> getAll();
 
 
     //update

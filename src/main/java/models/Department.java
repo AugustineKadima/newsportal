@@ -3,14 +3,14 @@ package models;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Departments{
+public class Department {
     private String name;
     private int id;
     private String description;
     private int number_of_employees;
-    public static ArrayList<Departments> allDepartments = new ArrayList<>();
+    public static ArrayList<Department> allDepartments = new ArrayList<>();
 
-    public Departments(String name, String description, int number_of_employees) {
+    public Department(String name, String description, int number_of_employees) {
         this.name = name;
         this.description = description;
         this.number_of_employees = number_of_employees;
@@ -50,19 +50,19 @@ public class Departments{
         this.number_of_employees = number_of_employees;
     }
 
-    public static ArrayList<Departments> getAllDepartments() {
+    public static ArrayList<Department> getAllDepartments() {
         return allDepartments;
     }
 
-    public static void setAllDepartments(ArrayList<Departments> allDepartments) {
-        Departments.allDepartments = allDepartments;
+    public static void setAllDepartments(ArrayList<Department> allDepartments) {
+        Department.allDepartments = allDepartments;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Departments that = (Departments) o;
+        Department that = (Department) o;
         return id == that.id && number_of_employees == that.number_of_employees && name.equals(that.name) && description.equals(that.description);
     }
 
