@@ -33,15 +33,5 @@ public class UserTest {
         Assertions.assertEquals("Fix bugs", user.getRoles());
 
     }
-    @Test
-    public void allUsersInstantiatesWithAnIdOf1(){
-        User.clearArray();
-        User user = new User(
-                "Mercy",
-                "Manager",
-                "Manage a team of IT professionals",
-                "ICT");
-        Assertions.assertEquals(1, user.getId());
 
-    }
 }

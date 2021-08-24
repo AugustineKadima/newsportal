@@ -8,14 +8,13 @@ public class News {
     private String header;
     private String content;
     private String written_by;
-    public static ArrayList<News> newsItems = new ArrayList<>();
+
 
     public News(String header, String content, String written_by) {
         this.header = header;
         this.content = content;
         this.written_by = written_by;
-        newsItems.add(this);
-        this.id = newsItems.size();
+        this.id = id;
     }
 
     public int getId() {
@@ -50,13 +49,6 @@ public class News {
         this.written_by = written_by;
     }
 
-    public static ArrayList<News> getNewsItems() {
-        return newsItems;
-    }
-
-    public void setNews(ArrayList<News> news) {
-        this.newsItems = news;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -71,7 +63,4 @@ public class News {
         return Objects.hash(id, header, content, written_by);
     }
 
-    public static void clearArray(){
-        newsItems.clear();
-    }
 }

@@ -1,11 +1,16 @@
 package dao;
 
+import models.Department;
+import models.News;
+import models.User;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
-public class Sql2oNewsDaoTest {
+import java.util.List;
+
+public class Sql2oNewsDaoTest implements INewsDao{
 
     private Connection conn;
     private Sql2oUsersDao newsDao;
@@ -22,5 +27,45 @@ public class Sql2oNewsDaoTest {
     @AfterAll
     public void tearDown() throws Exception {
         conn.close();
+    }
+
+    @Override
+    public void add(News news) {
+
+    }
+
+    @Override
+    public void addNewsUserDepartment(User user, News news, Department department) {
+
+    }
+
+    @Override
+    public List<News> getAll() {
+        return null;
+    }
+
+    @Override
+    public News findById(int id) {
+        return null;
+    }
+
+    @Override
+    public List<User> getNewsUser(int blackout_id) {
+        return null;
+    }
+
+    @Override
+    public List<Department> getNewsDepartment(int blackout_id) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(int id) {
+
+    }
+
+    @Override
+    public void clearAll() {
+
     }
 }

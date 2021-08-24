@@ -1,5 +1,7 @@
 package dao;
 
+import models.Department;
+import models.News;
 import models.User;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -27,11 +29,31 @@ public class Sql2oUsersDao implements IUsersDao{
     }
 
     @Override
+    public void addUserNewsDepartment(User user, News news, Department department) {
+
+    }
+
+    @Override
     public List<User> getAll() {
         try (Connection con = sql2o.open()) {
             return con.createQuery("SELECT * FROM users")
                     .executeAndFetch(User.class);
         }
+    }
+
+    @Override
+    public User findById(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Department> getUserDepartment(int blackout_id) {
+        return null;
+    }
+
+    @Override
+    public List<User> getUserNews(int blackout_id) {
+        return null;
     }
 
     @Override

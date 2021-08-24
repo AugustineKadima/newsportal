@@ -1,5 +1,7 @@
 package dao;
 
+import models.Department;
+import models.News;
 import models.User;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
@@ -8,7 +10,9 @@ import org.junit.jupiter.api.Test;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
-public class Sql2oUsersDaoTest {
+import java.util.List;
+
+public class Sql2oUsersDaoTest  implements IUsersDao {
 
     private Connection conn;
     private Sql2oUsersDao usersDao;
@@ -28,4 +32,43 @@ public class Sql2oUsersDaoTest {
     }
 
 
+    @Override
+    public void add(User user) {
+
+    }
+
+    @Override
+    public void addUserNewsDepartment(User user, News news, Department department) {
+
+    }
+
+    @Override
+    public List<User> getAll() {
+        return null;
+    }
+
+    @Override
+    public User findById(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Department> getUserDepartment(int blackout_id) {
+        return null;
+    }
+
+    @Override
+    public List<User> getUserNews(int blackout_id) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(int id) {
+
+    }
+
+    @Override
+    public void clearAll() {
+
+    }
 }

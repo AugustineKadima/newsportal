@@ -8,14 +8,12 @@ public class Department {
     private int id;
     private String description;
     private int number_of_employees;
-    public static ArrayList<Department> allDepartments = new ArrayList<>();
 
     public Department(String name, String description, int number_of_employees) {
         this.name = name;
         this.description = description;
         this.number_of_employees = number_of_employees;
-        allDepartments.add(this);
-        this.id = allDepartments.size();
+        this.id = id;
     }
 
     public String getName() {
@@ -50,13 +48,6 @@ public class Department {
         this.number_of_employees = number_of_employees;
     }
 
-    public static ArrayList<Department> getAllDepartments() {
-        return allDepartments;
-    }
-
-    public static void setAllDepartments(ArrayList<Department> allDepartments) {
-        Department.allDepartments = allDepartments;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -71,7 +62,4 @@ public class Department {
         return Objects.hash(name, id, description, number_of_employees);
     }
 
-    public static void clearArray(){
-        allDepartments.clear();
-    }
 }

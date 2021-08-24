@@ -9,15 +9,14 @@ public class User {
     private String title;
     private String roles;
     private String associated_department;
-    public static ArrayList<User> allUsers = new ArrayList<>();
+
 
     public User(String name, String position, String roles, String title) {
         this.name = name;
         this.title = position;
         this.roles = roles;
         this.associated_department = associated_department;
-        allUsers.add(this);
-        this.id = allUsers.size();
+        this.id = id;
 
     }
 
@@ -61,13 +60,6 @@ public class User {
         this.associated_department = associated_department;
     }
 
-    public static ArrayList<User> getAllUsers() {
-        return allUsers;
-    }
-
-    public static void setAllUsers(ArrayList<User> allUsers) {
-        User.allUsers = allUsers;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -82,7 +74,4 @@ public class User {
         return Objects.hash(id, name, title, roles, associated_department);
     }
 
-    public static void clearArray(){
-        allUsers.clear();
-    }
 }

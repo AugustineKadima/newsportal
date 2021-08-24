@@ -2,6 +2,7 @@ import com.google.gson.Gson;
 import dao.Sql2oDepartmentsDao;
 import dao.Sql2oNewsDao;
 import dao.Sql2oUsersDao;
+import exceptions.ApiException;
 import models.News;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -25,6 +26,8 @@ public class App {
         conn = sql2o.open();
 
         post("/news/new", "application/json", (req, res) -> {
+            //accept a request in format JSON from an app
+            
             News news = gson.fromJson(req.body(), News.class);
             newsDao.add(news);
             res.status(201);
