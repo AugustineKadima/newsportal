@@ -11,9 +11,9 @@ public class User {
     private String associated_department;
 
 
-    public User(String name, String position, String roles, String title) {
+    public User(String name, String title, String roles, String associated_department) {
         this.name = name;
-        this.title = position;
+        this.title = title;
         this.roles = roles;
         this.associated_department = associated_department;
         this.id = id;

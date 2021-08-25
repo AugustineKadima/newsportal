@@ -3,72 +3,80 @@ package dao;
 import models.Department;
 import models.News;
 import models.User;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
-import java.util.List;
 
-public class Sql2oUsersDaoTest  implements IUsersDao {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    private Connection conn;
-    private Sql2oUsersDao usersDao;
+public class Sql2oUsersDaoTest   {
+
+    private static Connection conn;
+    private static Sql2oUsersDao userDao;
 
 
-    @BeforeAll
-    public void setUp() throws Exception {
-        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+    @BeforeEach
+    void setUp() throws Exception {
+        String connectionString = "jdbc:postgresql://localhost:5432/news_portal_test";
         Sql2o sql2o = new Sql2o(connectionString, "sirkadima", "kadima123");
-        usersDao = new Sql2oUsersDao(sql2o);
+        userDao = new Sql2oUsersDao(sql2o);
         conn = sql2o.open();
     }
 
+    @AfterEach
+    void tearDown() {
+        System.out.println("Clearing database");
+        userDao.clearAll();
+    }
+
     @AfterAll
-    public void tearDown() throws Exception {
+    public static void shutDown() throws Exception {
         conn.close();
     }
 
-
-    @Override
-    public void add(User user) {
-
+    @Test
+    public void add() {
+        User user1 = new User("John", "Manager", "Manage doe", "Finance");
+        userDao.add(user1);
+        Assertions.assertEquals(userDao.getAll().get(0).getName(), "John");
     }
 
-    @Override
-    public void addUserNewsDepartment(User user, News news, Department department) {
-
+    @Test
+    public void getAll() {
+        User user = new User("John", "Manager", "Manage doe", "Finance");
+        userDao.add(user);
+        userDao.getAll();
+        assertEquals(user, userDao.findById(user.getId()));
     }
 
-    @Override
-    public List<User> getAll() {
-        return null;
+    @Test
+    public void findById() {
+        userDao.clearAll();
+        User user = new User("John", "Manager", "Manage doe", "Finance");
+        User user1 = new User("Jane", "Assistant", "Manage doe", "Finance");
+        userDao.add(user);
+        userDao.add(user1);
+        assertEquals(userDao.getAll().size(), 2);
     }
 
-    @Override
-    public User findById(int id) {
-        return null;
+
+
+    @Test
+    public void deleteById() {
+        User user = new User("John", "Manager", "Manage doe", "Finance");
+        User user1 = new User("Jane", "Assistant", "Manage doe", "Finance");
+        userDao.add(user);
+        userDao.add(user1);
+        userDao.deleteById(user.getId());
+        assertEquals(1,  userDao.getAll().size());
     }
 
-    @Override
-    public List<Department> getUserDepartment(int blackout_id) {
-        return null;
-    }
-
-    @Override
-    public List<User> getUserNews(int blackout_id) {
-        return null;
-    }
-
-    @Override
-    public void deleteById(int id) {
-
-    }
-
-    @Override
+    @Test
     public void clearAll() {
-
+        User user = new User("John", "Manager", "Manage doe", "Finance");
+        userDao.add(user);
+        userDao.deleteById(user.getId());
+        assertEquals(0,  userDao.getAll().size());
     }
 }

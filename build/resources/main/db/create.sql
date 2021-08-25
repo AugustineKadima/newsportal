@@ -25,5 +25,4 @@ CREATE TABLE IF NOT EXISTS departments(
     number_of_employees integer
 );
 
-
 CREATE DATABASE news_portal_test WITH TEMPLATE news_portal;

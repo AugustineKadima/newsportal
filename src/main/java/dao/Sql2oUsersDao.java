@@ -43,7 +43,11 @@ public class Sql2oUsersDao implements IUsersDao{
 
     @Override
     public User findById(int id) {
-        return null;
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM users WHERE id = :id")
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(User.class);
+        }
     }
 
     @Override
