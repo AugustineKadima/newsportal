@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="model.NewsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-25T00:38:11" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.001">
+<testsuite name="model.NewsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-25T07:11:29" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.006">
   <properties/>
-  <testcase name="allVariablesInNewsClassAreAssignable()" classname="model.NewsTest" time="0.0"/>
-  <testcase name="NewsClassCreatesInstances()" classname="model.NewsTest" time="0.0"/>
+  <testcase name="allVariablesInNewsClassAreAssignable()" classname="model.NewsTest" time="0.005"/>
+  <testcase name="NewsClassCreatesInstances()" classname="model.NewsTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

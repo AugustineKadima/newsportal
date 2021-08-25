@@ -83,5 +83,33 @@ public class App {
         });
 
 //        ADD ROUTING FOR NEWS
+
+        //CREATE NEWS POST
+        post("/news/new", "application/json", (req, res) -> {
+            News news = gson.fromJson(req.body(), News.class);
+            newsDao.add(news);
+            res.status(201);
+            return gson.toJson(news);
+        });
+
+        //GET ALL news
+        get("/news", "application/json", (req, res) -> {
+            return gson.toJson(newsDao.getAll());
+        });
+
+        //GET news BY ID
+        get("/news/:id", "application/json", (req, res) -> {
+            int newsId = Integer.parseInt(req.params("id"));
+            News newsToFind = newsDao.findById(newsId);
+            return gson.toJson(newsToFind);
+        });
+
+        //DELETE BY ID
+        delete("news/:news_id", (req, res) -> {
+            int news_id = Integer.parseInt(req.params("news_id"));
+            News newsToDelete = newsDao.findById(news_id);
+            newsDao.deleteById(news_id);
+            return gson.toJson(newsToDelete);
+        });
     }
 }
