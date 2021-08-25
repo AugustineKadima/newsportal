@@ -9,68 +9,74 @@ import org.sql2o.Sql2o;
 
 import java.util.List;
 
-public class Sql2oDepartmentDaoTest implements IDepartmentsDao {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    private Connection conn;
-    private Sql2oDepartmentsDao departmentDao;
-
+public class Sql2oDepartmentDaoTest {
+    private static Connection conn;
+    private static Sql2oDepartmentsDao departmentsDao;
 
     @BeforeEach
-    public void setUp() throws Exception {
-        String connectionString = "jdbc:postgresql://localhost:5432/news_portal_test'";
+    void setUp() throws Exception {
+        String connectionString = "jdbc:postgresql://localhost:5432/news_portal_test";
         Sql2o sql2o = new Sql2o(connectionString, "sirkadima", "kadima123");
-        departmentDao = new Sql2oDepartmentsDao(sql2o);
+        departmentsDao = new Sql2oDepartmentsDao(sql2o);
         conn = sql2o.open();
     }
 
     @AfterEach
-    public void tearDown() throws Exception {
-        departmentDao.clearAll();
+    void tearDown() {
+        System.out.println("Clearing database");
+        departmentsDao.clearAll();
     }
 
     @AfterAll
-    public void shutDown() throws Exception {
+    public static void shutDown() throws Exception {
         conn.close();
     }
 
-
-    @Override
-    public void add(Department departments) {
-
+    @Test
+    public void add() {
+        Department department = new Department("Finance", "Manage Finances", 8);
+        departmentsDao.add(department);
+        Assertions.assertEquals(departmentsDao.getAll().get(0).getName(), "Finance");
     }
 
-    @Override
-    public void addDepartmentNewsUser(User user, News news, Department department) {
-
+    @Test
+    public void getAll() {
+        Department department = new Department("Finance", "Manage Finances", 8);
+        departmentsDao.add(department);
+        departmentsDao.getAll();
+        assertEquals(department, departmentsDao.findById(department.getId()));
     }
 
-    @Override
-    public List<Department> getAll() {
-        return null;
+    @Test
+    public void findById() {
+        departmentsDao.clearAll();
+        Department department = new Department("Finance", "Manage Finances", 8);
+        Department department1 = new Department("Swimming", "Swim like fish", 8);
+        departmentsDao.add(department);
+        departmentsDao.add(department1);
+        assertEquals(departmentsDao.getAll().size(), 2);
     }
 
-    @Override
-    public Department findById(int id) {
-        return null;
+
+
+    @Test
+    public void deleteById() {
+        Department department = new Department("Finance", "Manage Finances", 8);
+        Department department1 = new Department("Swimming", "Swim like fish", 8);
+        departmentsDao.add(department);
+        departmentsDao.add(department1);
+        departmentsDao.deleteById(department.getId());
+        assertEquals(1,  departmentsDao.getAll().size());
     }
 
-    @Override
-    public List<User> getDepartmentUser(int blackout_id) {
-        return null;
-    }
-
-    @Override
-    public List<News> getDepartmentNews(int blackout_id) {
-        return null;
-    }
-
-    @Override
-    public void deleteById(int id) {
-
-    }
-
-    @Override
+    @Test
     public void clearAll() {
-
+        Department department = new Department("Finance", "Manage Finances", 8);
+        departmentsDao.add(department);
+        departmentsDao.deleteById(department.getId());
+        assertEquals(0,  departmentsDao.getAll().size());
     }
+
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dao.Sql2oDepartmentDaoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-25T00:38:11" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.63">
+  <properties/>
+  <testcase name="getAll()" classname="dao.Sql2oDepartmentDaoTest" time="0.114"/>
+  <testcase name="findById()" classname="dao.Sql2oDepartmentDaoTest" time="0.142"/>
+  <testcase name="add()" classname="dao.Sql2oDepartmentDaoTest" time="0.139"/>
+  <testcase name="clearAll()" classname="dao.Sql2oDepartmentDaoTest" time="0.103"/>
+  <testcase name="deleteById()" classname="dao.Sql2oDepartmentDaoTest" time="0.128"/>
+  <system-out><![CDATA[Clearing database
+Clearing database
+Clearing database
+Clearing database
+Clearing database
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
