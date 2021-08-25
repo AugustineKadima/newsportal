@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dao.Sql2oDepartmentDaoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-25T07:11:29" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.654">
+<testsuite name="dao.Sql2oDepartmentDaoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-25T11:58:08" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.672">
   <properties/>
-  <testcase name="getAll()" classname="dao.Sql2oDepartmentDaoTest" time="0.113"/>
-  <testcase name="findById()" classname="dao.Sql2oDepartmentDaoTest" time="0.141"/>
-  <testcase name="add()" classname="dao.Sql2oDepartmentDaoTest" time="0.107"/>
-  <testcase name="clearAll()" classname="dao.Sql2oDepartmentDaoTest" time="0.145"/>
-  <testcase name="deleteById()" classname="dao.Sql2oDepartmentDaoTest" time="0.142"/>
+  <testcase name="getAll()" classname="dao.Sql2oDepartmentDaoTest" time="0.144"/>
+  <testcase name="findById()" classname="dao.Sql2oDepartmentDaoTest" time="0.173"/>
+  <testcase name="add()" classname="dao.Sql2oDepartmentDaoTest" time="0.099"/>
+  <testcase name="clearAll()" classname="dao.Sql2oDepartmentDaoTest" time="0.103"/>
+  <testcase name="deleteById()" classname="dao.Sql2oDepartmentDaoTest" time="0.147"/>
   <system-out><![CDATA[Clearing database
 Clearing database
 Clearing database

@@ -1,0 +1,12 @@
+model/UserTest.java
+ model.UserTest
+dao/Sql2oNewsDaoTest.java
+ dao.Sql2oNewsDaoTest
+dao/Sql2oDepartmentDaoTest.java
+ dao.Sql2oDepartmentDaoTest
+model/NewsTest.java
+ model.NewsTest
+model/DepartmentTest.java
+ model.DepartmentTest
+dao/Sql2oUsersDaoTest.java
+ dao.Sql2oUsersDaoTest

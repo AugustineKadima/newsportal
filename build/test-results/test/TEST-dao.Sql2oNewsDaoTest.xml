@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dao.Sql2oNewsDaoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-25T07:11:28" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.722">
+<testsuite name="dao.Sql2oNewsDaoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-08-25T11:58:07" hostname="sirkadima-HP-Compaq-6200-Pro-SFF-PC" time="0.692">
   <properties/>
-  <testcase name="getAll()" classname="dao.Sql2oNewsDaoTest" time="0.138"/>
-  <testcase name="findById()" classname="dao.Sql2oNewsDaoTest" time="0.132"/>
-  <testcase name="add()" classname="dao.Sql2oNewsDaoTest" time="0.109"/>
-  <testcase name="clearAll()" classname="dao.Sql2oNewsDaoTest" time="0.158"/>
-  <testcase name="deleteById()" classname="dao.Sql2oNewsDaoTest" time="0.182"/>
+  <testcase name="getAll()" classname="dao.Sql2oNewsDaoTest" time="0.177"/>
+  <testcase name="findById()" classname="dao.Sql2oNewsDaoTest" time="0.141"/>
+  <testcase name="add()" classname="dao.Sql2oNewsDaoTest" time="0.097"/>
+  <testcase name="clearAll()" classname="dao.Sql2oNewsDaoTest" time="0.115"/>
+  <testcase name="deleteById()" classname="dao.Sql2oNewsDaoTest" time="0.154"/>
   <system-out><![CDATA[Clearing database
 Clearing database
 Clearing database
